@@ -24,6 +24,8 @@ function getCookies() {
 function setCookie(cookieName, cookieValue) {
     // Le cookie doit être valide 2 jours et doit respecter les normes de sécurité contre les failles CSRF.
     // Votre code ici.
+    document.cookie = "theme=white; path=/; domain=LocalHost; max-age=172800000; samesite=strict secure";
+    console.log(document.cookie);
 }
 
 
@@ -33,6 +35,11 @@ function setCookie(cookieName, cookieValue) {
  */
 function getCookie(cookieName) {
     // Votre code ici.
+    const storage = window.localStorage;
+    storage.setItem('theme', 'white');
+
+    let value = storage.getItem('theme');
+    console.log(value);
 }
 
 
